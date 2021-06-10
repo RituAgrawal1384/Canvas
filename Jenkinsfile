@@ -13,7 +13,7 @@ pipeline {
             withCredentials([usernamePassword(credentialsId: 'svc_pca_devopscoe', usernameVariable: 'BITBUCKET_USER',  passwordVariable: 'BITBUCKET_PASSWORD')]) {
                 dir('devops-common') {
                     git branch: "master",
-                        url: "https://${BITBUCKET_USER}:${BITBUCKET_PASSWORD}@code.pruconnect.net/scm/pcd/devops-common.git"
+                        url: "https://${BITBUCKET_USER}:${BITBUCKET_PASSWORD}@TYPE_BITBUCKET_DOMAIN/scm/pcd/devops-common.git"
                 }
             }
         }
@@ -26,7 +26,7 @@ pipeline {
                     sh '''
                         python --version
                         python -m pip install -r devops-common/requirements.txt
-                        python devops-common/send_bitbucket_status.py -u ${BITBUCKET_USER} -p ${BITBUCKET_PASSWORD} -l "https://code.pruconnect.net" \
+                        python devops-common/send_bitbucket_status.py -u ${BITBUCKET_USER} -p ${BITBUCKET_PASSWORD} -l "TYPE_BITBUCKET_URL" \
                         -s INPROGRESS -c ${GIT_COMMIT} -b ${BUILD_URL}
                     '''
                 }
@@ -67,7 +67,7 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'svc_pca_devopscoe', usernameVariable: 'BITBUCKET_USER',  passwordVariable: 'BITBUCKET_PASSWORD')]) {
                 sh '''
                   python -m pip install -r devops-common/requirements.txt
-                  python devops-common/send_bitbucket_status.py -u ${BITBUCKET_USER} -p ${BITBUCKET_PASSWORD} -l "https://code.pruconnect.net" \
+                  python devops-common/send_bitbucket_status.py -u ${BITBUCKET_USER} -p ${BITBUCKET_PASSWORD} -l "TYPE_BITBUCKET_URL" \
                   -s SUCCESSFUL -c ${GIT_COMMIT} -b ${BUILD_URL}
                 '''
           }
@@ -78,7 +78,7 @@ pipeline {
           withCredentials([usernamePassword(credentialsId: 'svc_pca_devopscoe', usernameVariable: 'BITBUCKET_USER',  passwordVariable: 'BITBUCKET_PASSWORD')]) {
                 sh '''
                   python -m pip install -r devops-common/requirements.txt
-                  python devops-common/send_bitbucket_status.py -u ${BITBUCKET_USER} -p ${BITBUCKET_PASSWORD} -l "https://code.pruconnect.net" \
+                  python devops-common/send_bitbucket_status.py -u ${BITBUCKET_USER} -p ${BITBUCKET_PASSWORD} -l "TYPE_BITBUCKET_URL" \
                   -s FAILED -c ${GIT_COMMIT} -b ${BUILD_URL}
                 '''
           }

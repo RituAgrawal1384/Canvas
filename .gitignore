@@ -4,8 +4,6 @@
 /reports/cucumber/
 /reports/
 src/test/resources/reports/
-src/test/java/com.pulse.app/sessionbuilder/CreateSessionCucumber
-src/test/java/com.pulse.app/testrunner/CucumberRunner
 
 ### IntelliJ IDEA ###
 .idea

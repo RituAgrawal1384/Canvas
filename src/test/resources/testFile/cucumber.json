@@ -189,11 +189,11 @@
               "status": "passed"
             },
             "line": 15,
-            "name": "User should display \"Are you an existing Prudential customer\" on News carousel",
+            "name": "User should display \"Are you an existing automation customer\" on News carousel",
             "match": {
               "arguments": [
                 {
-                  "val": "Are you an existing Prudential customer",
+                  "val": "Are you an existing automation customer",
                   "offset": 21
                 }
               ],

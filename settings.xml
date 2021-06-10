@@ -19,7 +19,7 @@
             <id>artifactory-internal</id>
             <properties>
                 <distributionManagement.repository.url>
-                    https://artifactory-new.pru.intranet.asia:8443/artifactory/maven-pca-coe
+                    TYPE_ARTIFACTORY_URL
                 </distributionManagement.repository.url>
             </properties>
             <repositories>
