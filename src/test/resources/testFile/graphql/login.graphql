@@ -1,0 +1,11 @@
+{
+     login(loginPayload:
+     {
+         userName: "testAutomation-33333@mailinator.com"
+         password: "Agent123"
+     })
+     {
+         ciamToken
+         token
+     }
+ }
