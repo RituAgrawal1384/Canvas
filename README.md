@@ -47,24 +47,24 @@
   e.g: - java -Dappium.screenshots.dir=$DEVICEFARM_SCREENSHOT_PATH -Dapp.env=UAT -Dapp.lbu=th -Dapp.language=en -Dios.app.bundle.id=<APP_BUNDLE_ID> org.testng.TestNG -testjar *-tests.jar -d $DEVICEFARM_LOG_DIR/test-output -verbose 10
   6. select devices to run
 
-**Prerequisite: Development environment should be setup**
-**Common**
+##Prerequisite: Development environment should be setup
+##Common
        Java
        Maven
        Intellij or other IDE
        git
-**For Mobile automation **
+##For Mobile automation
      Xcode
     Appium Desktop
     Android Studio
     
-**Setup system path variable**
+##Setup system path variable
    1. JAVA_HOME  → Path of JDK bin directory
    2. MAVEN_HOME  → Path of maven directory
    3. ANDROID_HOME → Path of SDK
    4. Add all the above path into system Path variable
 
-**How to use TAP steps to write test scenarios without glue code?**
+##How to use TAP steps to write test scenarios without glue code?
 
 1. Put settings.xml file in your .m2 directory and change the credential details (You can modify the file based on your project requirement)
 2. Create maven project
@@ -81,7 +81,7 @@
 Run your test using cucumber runner file  
 
 
-**Config Steps**
+##Config Steps
 @Given("^I verify expected values with actual values as below$")
 
 @And("I assign \"([^\"]*)\" to variable \"([^\"]*)\"")
@@ -120,12 +120,12 @@ PDF Steps
 
 
 
-**DB Steps**
+##DB Steps
 @Given("^I connect to \"([^\"]*)\" database$")
 
 @Given("^I execute below DB query and get value into the same variables$")
 
-**Web and Mobile Steps**
+##Web and Mobile Steps
 @Given("^I set browser type as \"([^\"]*)\"$")
 @Given("^I open browser in hidden mode \"([^\"]*)\"$")
 
@@ -247,7 +247,7 @@ PDF Steps
 Example of Mobile:  mobiletemplate.zip
 
 Background:
-#    Given I load property file "/locators/th/en_android.csv" into global property map
+<!--     Given I load property file "/locators/th/en_android.csv" into global property map -->
     And I load environment property file "uat" into global property map for lbu "th"
     And I load csv file "/locators/th/en_android.csv" with separator "=" into global property map
 
@@ -278,7 +278,7 @@ Scenario: Login to Web portal
   Then I verify element "//h2[text()='${welcome.page}']" is displayed
 
 
-**API Steps**
+##API Steps
 @When("I create connection for api service")
 
 @Given("^I set endpoint url as \"([^\"]*)\"$")
