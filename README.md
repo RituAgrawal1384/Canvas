@@ -13,9 +13,11 @@
        Intellij or other IDE
        git
 ## For Mobile automation
-     Xcode
+    Xcode
     Appium Desktop
     Android Studio
+    Mac
+    Real iOS and Android devices
     
 ## Setup system path variable
    1. JAVA_HOME  → Path of JDK bin directory
