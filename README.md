@@ -37,7 +37,8 @@
 6. Create runner java class file e.g:  CucumberRunner.txt . Use the attached file for reference for creating your runner class
 7. Add environment variable DEVICEFARM_DEVICE_PLATFORM_NAME=android/ios in runner edit configuration of runner file(For Mobile app only)
 8. If want to run browser in hidden mode add vm argument -Dweb.driver.headless=true
-Run your test using cucumber runner file  
+9. Run your test using cucumber runner file  
+10. Maven command to run test using CICD(e.g. Jenkins/Bamboo): mvn clean test -Dcucumber.options="--tags @regression --tags ~@ignore" -Dapp.env=UAT -Dapp.language=en -Dapp.lbu=th -Dweb.browser.type=chrome -Dplatform.type=desktop -Dsystem.proxy.apply=true -Dweb.driver.headless=true
 
 
 ## Config Steps
