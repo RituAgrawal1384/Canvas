@@ -249,9 +249,11 @@ Example of Mobile:  mobiletemplate.zip
 Background:
 <!--     Given I load property file "/locators/th/en_android.csv" into global property map -->
     And I load environment property file "uat" into global property map for lbu "th"
+    
     And I load csv file "/locators/th/en_android.csv" with separator "=" into global property map
 
   Scenario: Login to Mobile app
+  
     Given I get device platform into variable "DEVICE_PLATFORM"
     When I launch "${DEVICE_PLATFORM}" mobile application
     And I enter text "${login.id.global}" on element "${text.field.email}"
@@ -270,11 +272,17 @@ Background:
     And I swipe mobile down by duration "6000"
 
 Web Automation:
+
 Scenario: Login to Web portal
+
   Given I launch browser application "APP_URL"
+  
   When I enter text "<username>" on element "//input[@id='email']"
+ 
   When I enter text "<password>" on element "//input[@id='password']"
+ 
   And I click on element "//button[@type='submit'][text()='${login.button.text}']"
+ 
   Then I verify element "//h2[text()='${welcome.page}']" is displayed
 
 ## API Steps
@@ -312,8 +320,11 @@ Scenario: Login to Web portal
 Example:APITestingPOC.zip
 
 **Graphql**
+ 
 Scenario: Verify user can add employee post login to web api endpoint
+ 
   Given I generate random number and assign to variable "RAND_NUM"
+ 
   And I assign value to following variables
     | USER_NAME       | <admin User>                     |
     | PASSWORD        | <Admin Password>                 |
@@ -321,48 +332,74 @@ Scenario: Verify user can add employee post login to web api endpoint
     | EMP_FAMILY_NAME | Emp_${RAND_NUM}                     |
     | EMP_EMAIL       | TestEmp_${RAND_NUM}@mailinator.com  |
     | NODE            | login                               |
+ 
   Given I create connection for api service
+ 
   And I set endpoint url as "<end point>"
+ 
   And I set api headers as below
     | fullstackdeployheader | blue             |
     | content-type          | application/json |
+ 
   And I set graphql request body from file "/testdata/identity/login.graphql"
+
   And I send request "post" to api
+ 
   Then I verify response code is 200
+ 
   And I get response value for node "data.login.token" into variable "LOGIN_TOKEN"
+ 
   And I set api headers as below
     | fullstackdeployheader | blue                  |
     | content-type          | application/json      |
     | Authorization         | Bearer ${LOGIN_TOKEN} |
+ 
   And I set graphql request body from file "/testdata/quotations/Policy.graphql"
+ 
   And I send request "post" to api
+ 
   Then I verify response code is 200
+ 
   And I get response value for node "data.addEmployee.id" into variable "EMP_ID"
+ 
   Then I verify response value for node "data.addEmployee.givenName" is "${EMP_GIVEN_NAME}"
+ 
 
 **Multipart form data**
+ 
 Scenario: Verify User can post multipart request
+ 
   Given I create connection for api service
+ 
   And I set endpoint url as "<Your endpoint>"
+ 
   And I set multipart data as below
     | client_secret | <secret id>     |
     | client_id     | <client id>     |
     | contact       | <PhoneNumber>   |
     | email         | <EmailAddress>  |
+ 
   #And I set multipart key "Users.csv" as file "/testdata/user_upload/output/Users.csv"
+ 
    And I send request "post" to api
+ 
    Then I verify response code is 200
 
 Scenario: Get request
+ 
   Given I create connection for api service
+ 
   And I set endpoint url as "<Your endpoint>"
+ 
   And I send request "get" to api
+ 
   Then I verify response code is 200
 
 
 How to create custom steps using Page object model
 While writing function/regression scenarios if you come across in situation where you need to write a custom step apart from the default steps in TAP. Follow below guidelines.
 
+ 
 **Template Project using page object modal**: mobiletemplate_POM.zip
 
 Example: Login scenario. Instead of writing the same steps like enter userid, password, otp and click on login button in all feature file you can combine these steps and create your own login scenario
@@ -370,18 +407,24 @@ Example: Login scenario. Instead of writing the same steps like enter userid, pa
 Feature file:
 
 Scenario: Example of how to write custom steps
+ 
   Given I get device platform into variable "DEVICE_PLATFORM"
+ 
   When I launch "${DEVICE_PLATFORM}" mobile application
+ 
   And I login to mobile app using email "${login.id.global}".    --> This step require in all my feature file(enter userid, click on submit button and enter otp)
 
 **LoginStep:**
+ 
 @Given("^I login to mobile app using email \"([^\"]*)\"$")
-public void loginToPulseApp(String emailId) {
-    loginPage.loginToPulse(emailId);
+ 
+public void loginToApp(String emailId) {
+    loginPage.loginToApp(emailId);
 }
 
 LoginPage:
-public void loginToPulse(String userName) {
+ 
+public void loginToApp(String userName) {
     enterEmailId(userName);
     clickSubmitButton();
     enterOTP("123456");
