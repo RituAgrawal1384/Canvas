@@ -6,8 +6,8 @@ import com.automation.tat.exception.TapExceptionType;
 import com.automation.tat.config.Configvariable;
 import com.automation.tat.config.TapBeansLoad;
 import com.automation.tat.database.DatabaseMethods;
-import cucumber.api.DataTable;
-import cucumber.api.java.en.Given;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.Given;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 

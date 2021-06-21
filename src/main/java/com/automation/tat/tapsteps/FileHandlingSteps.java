@@ -6,7 +6,7 @@ import com.automation.tat.config.Configvariable;
 import com.automation.tat.config.TapBeansLoad;
 import com.automation.tat.exception.TapException;
 import com.automation.tat.exception.TapExceptionType;
-import cucumber.api.java.en.Given;
+import io.cucumber.java.en.Given;
 
 import java.io.InputStream;
 import java.util.List;

@@ -4,10 +4,10 @@ import com.automation.tat.cucumberUtils.ScenarioUtils;
 import com.automation.tat.filehandling.FileReaderUtil;
 import com.automation.tat.config.Configvariable;
 import com.automation.tat.config.TapBeansLoad;
-import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 
 import java.io.InputStream;
 import java.time.LocalDateTime;

@@ -36,11 +36,6 @@ public class TapReportingTest {
         TapReporting.generateReportForJsonFiles(filePath);
     }
 
-    @Test
-    public void testLocation() {
-        tapReporting.getScreenShotLocation(System.getProperty("user.dir") + "./reports/cucumber/cucumber.json");
-    }
-
 
     @Test
     public void testDetailedReport() {

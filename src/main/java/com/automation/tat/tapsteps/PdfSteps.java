@@ -4,11 +4,11 @@ import com.automation.tat.filehandling.FileReaderUtil;
 import com.automation.tat.filehandling.PdfFileUtil;
 import com.automation.tat.config.Configvariable;
 import com.automation.tat.config.TapBeansLoad;
-import cucumber.api.DataTable;
-import cucumber.api.java.en.When;
 import java.io.InputStream;
 import java.util.List;
 
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class PdfSteps {

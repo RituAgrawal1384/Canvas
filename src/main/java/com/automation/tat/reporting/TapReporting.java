@@ -1,46 +1,27 @@
 package com.automation.tat.reporting;
 
+import com.automation.tat.config.Configvariable;
 import com.automation.tat.exception.TapException;
+import com.automation.tat.exception.TapExceptionType;
 import com.automation.tat.filehandling.FileReaderUtil;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.markuputils.ExtentColor;
-import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.cucumber.listener.Reporter;
 import com.github.mkolisnyk.cucumber.reporting.CucumberDetailedResults;
 import com.github.mkolisnyk.cucumber.reporting.CucumberFeatureOverview;
 import com.github.mkolisnyk.cucumber.reporting.CucumberUsageReporting;
-import com.automation.tat.config.Configvariable;
-import com.automation.tat.exception.TapExceptionType;
-import cucumber.api.Scenario;
-import cucumber.runtime.ScenarioImpl;
-import gherkin.formatter.model.Result;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
-import org.apache.commons.lang3.reflect.FieldUtils;
 import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-
-import static gherkin.formatter.model.Result.FAILED;
-import static gherkin.formatter.model.Result.PASSED;
 import static junit.framework.TestCase.assertTrue;
 
 public class TapReporting {
 
     private static final Logger LOGGER = Logger.getLogger(TapReporting.class);
-
-    private ExtentHtmlReporter extentHtmlReporter;
-    private ExtentReports extentReports;
-
 
     public static void generateReportForJsonFiles(String devicefarmLogDir) {
 
@@ -99,92 +80,6 @@ public class TapReporting {
             }
         }
         return jsonFiles;
-    }
-
-
-    public void customExtentReport(String reportLocation) {
-        extentHtmlReporter = new ExtentHtmlReporter(new File(reportLocation));
-        extentHtmlReporter.config().setDocumentTitle("Automation Test Report");
-        extentHtmlReporter.config().setReportName("Automation Test Report");
-        extentHtmlReporter.config().setTheme(Theme.STANDARD);
-        extentReports = new ExtentReports();
-        extentReports.attachReporter(extentHtmlReporter);
-        extentReports.setSystemInfo("Operating System", System.getProperty("os.name"));
-        extentReports.setSystemInfo("User Name", System.getProperty("user.name"));
-    }
-
-    public void createTest(Scenario scenario, String screenShotFile) {
-        ExtentTest test = null;
-        if (scenario != null) {
-            String testName = getScenarioTitle(scenario);
-            test = extentReports.createTest(testName);
-
-
-            switch (scenario.getStatus()) {
-                case PASSED:
-                    test.pass(MarkupHelper.createLabel("Test Case is Passed : ", ExtentColor.GREEN));
-//                    extentReports.createTest(testName).pass("Passed");
-                    break;
-                case FAILED:
-                    try {
-                        test.fail(MarkupHelper.createLabel("Test Case is Failed : ", ExtentColor.RED));
-                        test.error(logError(scenario));
-                        test.addScreenCaptureFromPath(screenShotFile);
-                    } catch (Exception e) {
-                        throw new TapException(TapExceptionType.PROCESSING_FAILED, "Not able to add screenshot to report");
-                    }
-                    break;
-                default:
-                    test.skip(MarkupHelper.createLabel("Test Case is Skipped : ", ExtentColor.YELLOW));
-//                    extentReports.createTest(testName).skip("Skipped");
-            }
-        }
-    }
-
-    private Throwable logError(Scenario scenario) {
-        Field field = FieldUtils.getField(((ScenarioImpl) scenario).getClass(), "stepResults", true);
-        field.setAccessible(true);
-        try {
-            ArrayList<Result> results = (ArrayList<Result>) field.get(scenario);
-            for (Result result : results) {
-                if (result.getError() != null)
-                    return result.getError();
-            }
-        } catch (Exception e) {
-            throw new TapException(TapExceptionType.PROCESSING_FAILED, "Error while logging the error");
-        }
-        return null;
-    }
-
-    private String getScenarioTitle(Scenario scenario) {
-        return scenario.getName();
-    }
-
-    public String getScreenShotLocation(String location) {
-        return "file:///" + location.replaceAll("\\\\", "//");
-    }
-
-    public void writeToReport() {
-        if (extentReports != null) {
-            extentReports.flush();
-        }
-    }
-
-    public String getReportConfigPath() {
-        String reportConfigPath = System.getProperty("user.dir") + "src/main/java/config/extent-config.xml";
-        if (reportConfigPath != null) return reportConfigPath;
-        else
-            throw new TapException(TapExceptionType.PROCESSING_FAILED, "Report Config Path not specified in the .properties file for the Key:reportConfigPath");
-    }
-
-    public void writeExtentReport() {
-        Reporter.loadXMLConfig(new File(getReportConfigPath()));
-        Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
-        Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
-        Reporter.setSystemInfo("Machine", System.getProperty("os"));
-        Reporter.setSystemInfo("Selenium", "3.7.0");
-        Reporter.setSystemInfo("Maven", "3.5.2");
-        Reporter.setSystemInfo("Java Version", "1.8.0_151");
     }
 
     public static void overviewReport(String jsonReportFilePath, String overViewreportName) {

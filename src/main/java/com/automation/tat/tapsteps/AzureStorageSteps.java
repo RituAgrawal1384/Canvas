@@ -4,7 +4,7 @@ import com.automation.tat.config.Configvariable;
 import com.automation.tat.config.TapBeansLoad;
 import com.automation.tat.cucumberUtils.ScenarioUtils;
 import com.automation.tat.filehandling.AzureStorageUtils;
-import cucumber.api.java.en.Then;
+import io.cucumber.java.en.Then;
 
 public class AzureStorageSteps {
 
