@@ -1,4 +1,4 @@
-## TAP is a platform which provides various testing automation capability as below
+## TAT is a platform which provides various testing automation capability as below
 1. Web application using selenium
 2. Mobile app using selenium and appium
 3. GraphQL, Rest Assured, WebSocket api 
@@ -25,14 +25,14 @@
    3. ANDROID_HOME → Path of SDK
    4. Add all the above path into system Path variable
 
-## How to use TAP steps to write test scenarios without glue code?
+## How to use TAT steps to write test scenarios without glue code?
 
 1. Put settings.xml file in your .m2 directory and change the credential details (You can modify the file based on your project requirement)
 2. Create maven project
-3. Add tap dependency as below in your pom.xml file (Need to work on release version)
+3. Add tat dependency as below in your pom.xml file (Need to work on release version)
 4.<dependency>
     <groupId>com.automation.tat</groupId>
-    <artifactId>test-automation-platform</artifactId>
+    <artifactId>test-automation-tools</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
 5. Write feature file using below steps
@@ -361,7 +361,7 @@ Scenario: Get request
 
 
 ## How to create custom steps using Page object model
-While writing function/regression scenarios if you come across in situation where you need to write a custom step apart from the default steps in TAP. Follow below guidelines.
+While writing function/regression scenarios if you come across in situation where you need to write a custom step apart from the default steps in TAT. Follow below guidelines.
 
  
 **Template Project using page object modal**: mobiletemplate_POM.zip
