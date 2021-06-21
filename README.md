@@ -31,7 +31,7 @@
 2. Create maven project
 3. Add tap dependency as below in your pom.xml file (Need to work on release version)
 4.<dependency>
-    <groupId>com.automation.tap</groupId>
+    <groupId>com.automation.tat</groupId>
     <artifactId>test-automation-platform</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
@@ -65,9 +65,10 @@
 @Given("^I delete the downloaded file \"([^\"]*)\" if it already exists$")
 
 @When("I calculate \"([^\"]*)\" from current date in \"([^\"]*)\" format and assign to variable \"([^\"]*)\"")
+
 @And("I set system property \"([^\"]*)\" to value \"([^\"]*)\"")
 
-PDF Steps
+## PDF Steps
 @When("^I verify \"([^\"]*)\" pdf file is matching with \"([^\"]*)\" pdf file and exceptions are written in \"([^\"]*)\"$")
 
 @When("^I verify PDF file \"([^\"]*)\" should contain following values$")
@@ -81,7 +82,6 @@ PDF Steps
 @When("^I verify downloaded PDF file \"([^\"]*)\" should contain the values in file \"([^\"]*)\"$")
 
 
-
 ## DB Steps
 @Given("^I connect to \"([^\"]*)\" database$")
 
@@ -89,6 +89,7 @@ PDF Steps
 
 ## Web and Mobile Steps
 @Given("^I set browser type as \"([^\"]*)\"$")
+
 @Given("^I open browser in hidden mode \"([^\"]*)\"$")
 
 @Given("^I set default download directory as \"([^\"]*)\"$")
@@ -205,11 +206,10 @@ PDF Steps
 
 @Given("^I hide mobile keyboard$")
 
-
 Example of Mobile:  mobiletemplate.zip
 
 Background:
-<!--     Given I load property file "/locators/th/en_android.csv" into global property map -->
+
     And I load environment property file "uat" into global property map for lbu "th"
     
     And I load csv file "/locators/th/en_android.csv" with separator "=" into global property map
@@ -237,8 +237,9 @@ Web Automation:
 
 Scenario: Login to Web portal
 
+
   Given I launch browser application "APP_URL"
-  
+
   When I enter text "<username>" on element "//input[@id='email']"
  
   When I enter text "<password>" on element "//input[@id='password']"
@@ -277,6 +278,7 @@ Scenario: Login to Web portal
 @When("I close connection for api service")
 
 @When("^I send request \"([^\"]*)\" to api$")
+
 @When("^I set multipart data as below$")
 
 Example:APITestingPOC.zip
@@ -358,7 +360,7 @@ Scenario: Get request
   Then I verify response code is 200
 
 
-How to create custom steps using Page object model
+## How to create custom steps using Page object model
 While writing function/regression scenarios if you come across in situation where you need to write a custom step apart from the default steps in TAP. Follow below guidelines.
 
  

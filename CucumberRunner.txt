@@ -12,7 +12,7 @@ import org.testng.annotations.*;
 
 import java.util.TimeZone;
 
-@ComponentScan(basePackages = {"com.sales.portal", "com.automation.tap", "com.sales.api"})
+@ComponentScan(basePackages = {"com.sales.portal", "com.automation.tat", "com.sales.api"})
 @Configuration
 @ExtendedCucumberOptions(
         jsonReport = "reports/cucumber/cucumber.json"
