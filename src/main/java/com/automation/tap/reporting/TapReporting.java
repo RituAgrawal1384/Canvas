@@ -55,13 +55,13 @@ public class TapReporting {
             reportDirectory = "reports/cucumber";
         } else {
             if (System.getProperty("device.udid") != null) {
-                FileReaderUtil.createDirectory(System.getProperty("user.dir") + "/src/test/resources/reports/summary/" + System.getProperty("device.udid"));
+                FileReaderUtil.createDirectory("reports/cucumber" + System.getProperty("device.udid"));
 
-                logFileDirectory = System.getProperty("user.dir") + "/src/test/resources/reports/summary/" + System.getProperty("device.udid");
+                logFileDirectory = "reports/cucumber" + System.getProperty("device.udid");
                 reportDirectory = "reports/cucumber/" + System.getProperty("device.udid");
                 projectName = projectName + "-" + System.getProperty("device.udid");
             } else {
-                logFileDirectory = System.getProperty("user.dir") + "/src/test/resources/reports/summary";
+                logFileDirectory = "reports/cucumber";
                 reportDirectory = "reports/cucumber";
             }
         }

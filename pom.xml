@@ -16,6 +16,7 @@
             TYPE_ARTIFACTORY_URL
         </distributionManagement.repository.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <apache.poi.version>4.1.2</apache.poi.version>
     </properties>
 
     <build>
@@ -392,13 +393,6 @@
             <version>1.1.40</version>
         </dependency>
 
-        <!--        <dependency>-->
-        <!--            <groupId>com.github.tomakehurst</groupId>-->
-        <!--            <artifactId>wiremock</artifactId>-->
-        <!--            <version>2.24.0</version>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
-
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
@@ -491,6 +485,42 @@
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-storage-blob</artifactId>
+            <version>12.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-storage-file-share</artifactId>
+            <version>12.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-storage-common</artifactId>
+            <version>12.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.11.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.10</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

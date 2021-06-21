@@ -67,13 +67,13 @@ public class ConfigvariableTest {
     @Test
     public void testSetupEnvironmentProperties() {
         configvariable.setupEnvironmentProperties("dev", "sg");
-        assertEquals(configvariable.getStringVar("mydoc.doc.id5"), "41020");
+        assertEquals(configvariable.getStringVar("doc.id5"), "41020");
 
         configvariable.setupEnvironmentProperties("uat", "sg");
-        assertEquals(configvariable.getStringVar("mydoc.doc.id4"), "42127");
+        assertEquals(configvariable.getStringVar("doc.id4"), "42127");
 
         configvariable.setupEnvironmentProperties("dev", "");
-        assertEquals(configvariable.getStringVar("mydoc.doc.id5"), "41020");
+        assertEquals(configvariable.getStringVar("doc.id5"), "41020");
     }
 
     @Test
