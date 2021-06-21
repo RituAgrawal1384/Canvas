@@ -19,9 +19,9 @@ public class TapEmailTest {
         Configvariable.globalPropertyMap.put("email.smtp.socket.class", "javax.net.ssl.SSLSocketFactory");
         Configvariable.globalPropertyMap.put("email.smtp.auth", "true");
         Configvariable.globalPropertyMap.put("email.smtp.port", "465");
-        Configvariable.globalPropertyMap.put("email.username", "pulsesgqa@gmail.com");
-        Configvariable.globalPropertyMap.put("email.password", "pulsesgqa@123");
-        Configvariable.globalPropertyMap.put("email.fromUser", "pulsesgqa@gmail.com");
+        Configvariable.globalPropertyMap.put("email.username", "sgqa@gmail.com");
+        Configvariable.globalPropertyMap.put("email.password", "sgqa@123");
+        Configvariable.globalPropertyMap.put("email.fromUser", "sgqa@gmail.com");
         Configvariable.globalPropertyMap.put("email.toUser", "testAutomation@gmail.com");
         Configvariable.globalPropertyMap.put("email.subject", "Test Automation Execution Report");
         Configvariable.globalPropertyMap.put("email.message.body", "Please find attached the cucumber report.");

@@ -49,7 +49,7 @@
     <logger name="org.springframework">
         <level value="INFO"/>
     </logger>
-    <logger name="com.prudential.tap">
+    <logger name="com.automation.tap">
         <level value="DEBUG"/>
     </logger>
     <logger name="net.schmizz.sshj">

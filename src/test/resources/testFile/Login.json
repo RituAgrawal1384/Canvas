@@ -1,6 +1,6 @@
 {
   "operation": "login",
-  "apikey": "${pulse.api.key}",
+  "apikey": "${api.key}",
   "body": {
     "loginId": "${USER_NAME}",
     "password": "${USER_PASSWORD}"

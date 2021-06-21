@@ -65,8 +65,8 @@ public class TapDriver {
     private static String APPIUM_SERVER_URL = "http://127.0.0.1:4723/wd/hub";
     private static int DEFAULT_IMPLICIT_WAIT = 2;
     public static boolean NO_RESET = false;
-    private static String APP_LANGUAGE = System.getProperty("pulse.language");
-    private static String APP_COUNTRY = System.getProperty("pulse.country");
+    private static String APP_LANGUAGE = System.getProperty("app.language");
+    private static String APP_COUNTRY = System.getProperty("app.country");
     private static String PROXY_USER = System.getProperty("proxy.user");
     private static String PROXY_PASS = System.getProperty("proxy.pass");
     private static String PROXY_URL = "http://10.163.39.77:8080";

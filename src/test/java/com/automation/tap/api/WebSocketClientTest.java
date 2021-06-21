@@ -35,10 +35,10 @@
 //
 //    @Test
 //    public void testSendRequestAndCheckForResponse() {
-//        String pulseURL = "type_socket_url";
-//        configvariable.setStringVariable("pulsesgqa+1510151024@gmail.com", "USER_NAME");
+//        String URL = "type_socket_url";
+//        configvariable.setStringVariable("sgqa+1510151024@gmail.com", "USER_NAME");
 //        configvariable.setStringVariable("Pas$1234", "USER_PASSWORD");
-//        webSocketClient.setWebSocketURL(pulseURL);
+//        webSocketClient.setWebSocketURL(URL);
 //        String response = webSocketClient.sendRequestAndCheckForResponse("/testFile/Login.json");
 //        logger.info("Receiving: " + response);
 //        assertNotNull(response);
@@ -49,7 +49,7 @@
 //    public void testSendMalinatorRequestAndGetForResponse() {
 //        //taf-249071111135@mailinator.com
 //        String MalinatorURL = "wss://www.mailinator.com/ws/fetchinbox?zone=public&query=taf-249071111135";
-//        configvariable.setStringVariable("Pulse - Account creation request", "EMAIL_SUBJECT");
+//        configvariable.setStringVariable("Account creation request", "EMAIL_SUBJECT");
 //        String response = webSocketClient.sendMalinatorRequestAndGetForResponse(MalinatorURL);
 //        Map<String, Object> responseMap = jsonReader.convertJsonStringToMap(response);
 //        assertNotNull(responseMap);

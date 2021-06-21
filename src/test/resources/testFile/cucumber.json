@@ -17,7 +17,7 @@
         "line": 4,
         "name": "User should be able to login on app with correct credentials and initial set up should be shown",
         "description": "",
-        "id": "verify-login-functionality-on-pulse-health-&-wealth-app;user-should-be-able-to-login-on-app-with-correct-credentials-and-initial-set-up-should-be-shown",
+        "id": "verify-login-functionality-on-health-&-wealth-app;user-should-be-able-to-login-on-app-with-correct-credentials-and-initial-set-up-should-be-shown",
         "after": [
           {
             "result": {
@@ -47,9 +47,9 @@
               "status": "passed"
             },
             "line": 5,
-            "name": "User has pulse app",
+            "name": "User has mobile app",
             "match": {
-              "location": "BaseSteps.userHasPulseAppGeneric()"
+              "location": "BaseSteps.userHasmobileAppGeneric()"
             },
             "keyword": "Given "
           },
@@ -67,14 +67,14 @@
               {
                 "cells": [
                   "UserName",
-                  "${pulse.login.username}"
+                  "${mobile.login.username}"
                 ],
                 "line": 7
               },
               {
                 "cells": [
                   "Password",
-                  "${pulse.password}"
+                  "${mobile.password}"
                 ],
                 "line": 8
               }
@@ -218,7 +218,7 @@
         "line": 17,
         "name": "User should be able to see a navigation bar at the bottom of screen and it must be persistent",
         "description": "",
-        "id": "verify-login-functionality-on-pulse-health-&-wealth-app;user-should-be-able-to-see-a-navigation-bar-at-the-bottom-of-screen-and-it-must-be-persistent",
+        "id": "verify-login-functionality-on-mobile-health-&-wealth-app;user-should-be-able-to-see-a-navigation-bar-at-the-bottom-of-screen-and-it-must-be-persistent",
         "after": [
           {
             "result": {
@@ -260,9 +260,9 @@
               "status": "passed"
             },
             "line": 19,
-            "name": "I sign out from pulse app",
+            "name": "I sign out from mobile app",
             "match": {
-              "location": "LoginSteps.signOutFromPulseApp()"
+              "location": "LoginSteps.signOutFrommobileApp()"
             },
             "keyword": "Then "
           }
@@ -283,7 +283,7 @@
         "line": 21,
         "name": "User should be able to retrieve the new password using forget password",
         "description": "",
-        "id": "verify-login-functionality-on-pulse-health-&-wealth-app;user-should-be-able-to-retrieve-the-new-password-using-forget-password",
+        "id": "verify-login-functionality-on-mobile-health-&-wealth-app;user-should-be-able-to-retrieve-the-new-password-using-forget-password",
         "after": [
           {
             "result": {
@@ -366,9 +366,9 @@
               "status": "passed"
             },
             "line": 27,
-            "name": "I register to pulse using API",
+            "name": "I register to mobile using API",
             "match": {
-              "location": "PulseApiSteps.registerToPulseUsingAPI()"
+              "location": "mobileApiSteps.registerTomobileUsingAPI()"
             },
             "keyword": "And "
           },
@@ -380,7 +380,7 @@
             "line": 28,
             "name": "I disconnect from webSocket",
             "match": {
-              "location": "PulseApiSteps.disconnectFromWebSocket()"
+              "location": "mobileApiSteps.disconnectFromWebSocket()"
             },
             "keyword": "And "
           },
@@ -390,9 +390,9 @@
               "status": "passed"
             },
             "line": 29,
-            "name": "User has pulse app",
+            "name": "User has mobile app",
             "match": {
-              "location": "BaseSteps.userHasPulseAppGeneric()"
+              "location": "BaseSteps.userHasmobileAppGeneric()"
             },
             "keyword": "Given "
           },
@@ -444,7 +444,7 @@
           {
             "result": {
               "duration": 161721450727,
-              "error_message": "com.pulse.app.helperclasses.PulseException: Not able to find element on screen [By.xpath: //android.widget.TextView[contains(@text,\"We���ve sent you an email containing a password reset code\")]]\n\tat com.pulse.app.helperclasses.GenericMethods.findElement(GenericMethods.java:161)\n\tat com.pulse.app.screens.PulseLoginScreen.getResetPasswordText(PulseLoginScreen.java:123)\n\tat com.pulse.app.stepdefinitions.mobilesteps.LoginSteps.verifyResetPasswordMsg(LoginSteps.java:91)\n\tat ✽.Then Verify message: \"We’ve sent you an email containing a password reset code\" for Reset Password(features/PulseLoginTest.feature:34)\n",
+              "error_message": "com.mobile.app.helperclasses.mobileException: Not able to find element on screen [By.xpath: //android.widget.TextView[contains(@text,\"We���ve sent you an email containing a password reset code\")]]\n\tat com.mobile.app.helperclasses.GenericMethods.findElement(GenericMethods.java:161)\n\tat com.mobile.app.screens.mobileLoginScreen.getResetPasswordText(mobileLoginScreen.java:123)\n\tat com.mobile.app.stepdefinitions.mobilesteps.LoginSteps.verifyResetPasswordMsg(LoginSteps.java:91)\n\tat ✽.Then Verify message: \"We’ve sent you an email containing a password reset code\" for Reset Password(features/mobileLoginTest.feature:34)\n",
               "status": "failed"
             },
             "line": 34,
@@ -482,11 +482,11 @@
               "status": "skipped"
             },
             "line": 36,
-            "name": "I assign \"Pulse - Reset Password OTP\" to variable \"EMAIL_SUBJECT\"",
+            "name": "I assign \"mobile - Reset Password OTP\" to variable \"EMAIL_SUBJECT\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Pulse - Reset Password OTP",
+                  "val": "mobile - Reset Password OTP",
                   "offset": 10
                 },
                 {
@@ -515,7 +515,7 @@
                   "offset": 52
                 }
               ],
-              "location": "PulseApiSteps.readOtpFromEmailAndSetVariable(String,String)"
+              "location": "mobileApiSteps.readOtpFromEmailAndSetVariable(String,String)"
             },
             "keyword": "And "
           },
@@ -588,7 +588,7 @@
             "line": 42,
             "name": "I disconnect from webSocket",
             "match": {
-              "location": "PulseApiSteps.disconnectFromWebSocket()"
+              "location": "mobileApiSteps.disconnectFromWebSocket()"
             },
             "keyword": "And "
           },
@@ -597,11 +597,11 @@
               "status": "skipped"
             },
             "line": 43,
-            "name": "I assign \"Pulse - Reset Password\" to variable \"EMAIL_SUBJECT\"",
+            "name": "I assign \"mobile - Reset Password\" to variable \"EMAIL_SUBJECT\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Pulse - Reset Password",
+                  "val": "mobile - Reset Password",
                   "offset": 10
                 },
                 {
@@ -630,7 +630,7 @@
                   "offset": 67
                 }
               ],
-              "location": "PulseApiSteps.readTempPassFromEmailAndSetVariable(String,String)"
+              "location": "mobileApiSteps.readTempPassFromEmailAndSetVariable(String,String)"
             },
             "keyword": "And "
           },
@@ -639,9 +639,9 @@
               "status": "skipped"
             },
             "line": 45,
-            "name": "I login into pulse app with below details",
+            "name": "I login into mobile app with below details",
             "match": {
-              "location": "LoginSteps.loginToPulseApp(DataTable)"
+              "location": "LoginSteps.loginTomobileApp(DataTable)"
             },
             "rows": [
               {
@@ -668,7 +668,7 @@
             "line": 48,
             "name": "I disconnect from webSocket",
             "match": {
-              "location": "PulseApiSteps.disconnectFromWebSocket()"
+              "location": "mobileApiSteps.disconnectFromWebSocket()"
             },
             "keyword": "And "
           },
@@ -677,20 +677,20 @@
               "status": "skipped"
             },
             "line": 49,
-            "name": "I sign out from pulse app",
+            "name": "I sign out from mobile app",
             "match": {
-              "location": "LoginSteps.signOutFromPulseApp()"
+              "location": "LoginSteps.signOutFrommobileApp()"
             },
             "keyword": "Then "
           }
         ]
       }
     ],
-    "name": "Verify login functionality on Pulse Health & Wealth app",
+    "name": "Verify login functionality on mobile Health & Wealth app",
     "description": "",
-    "id": "verify-login-functionality-on-pulse-health-&-wealth-app",
+    "id": "verify-login-functionality-on-mobile-health-&-wealth-app",
     "keyword": "Feature",
-    "uri": "features/PulseLoginTest.feature",
+    "uri": "features/mobileLoginTest.feature",
     "tags": [
       {
         "line": 1,
@@ -698,11 +698,11 @@
       },
       {
         "line": 1,
-        "name": "@pulse_sg"
+        "name": "@mobile_sg"
       },
       {
         "line": 1,
-        "name": "@pulse_regression"
+        "name": "@mobile_regression"
       },
       {
         "line": 1,

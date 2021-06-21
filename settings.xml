@@ -59,7 +59,7 @@
             <id>artifactory-external</id>
             <properties>
                 <distributionManagement.repository.url>
-                    https://artifactory.pruconnect.net/artifactory/maven-pca-coe
+                    TYPE_ARTIFACTORY_URL
                 </distributionManagement.repository.url>
             </properties>
             <repositories>

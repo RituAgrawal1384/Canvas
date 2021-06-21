@@ -1,13 +1,6 @@
 package com.api.runner;
 import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
 import com.github.mkolisnyk.cucumber.runner.ExtendedTestNGRunner;
-import com.prudential.tap.config.Configvariable;
-import com.prudential.tap.config.TapBeansLoad;
-import com.prudential.tap.email.TapEmail;
-import com.prudential.tap.filehandling.FileReaderUtil;
-import com.prudential.tap.filehandling.ZipFolder;
-import com.prudential.tap.reporting.TapReporting;
-import com.prudential.tap.selenium.SeleniumBase;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
@@ -19,7 +12,7 @@ import org.testng.annotations.*;
 
 import java.util.TimeZone;
 
-@ComponentScan(basePackages = {"com.pru.sales.portal", "com.prudential.tap", "com.pru.sales.api"})
+@ComponentScan(basePackages = {"com.sales.portal", "com.automation.tap", "com.sales.api"})
 @Configuration
 @ExtendedCucumberOptions(
         jsonReport = "reports/cucumber/cucumber.json"
@@ -34,7 +27,7 @@ import java.util.TimeZone;
 @CucumberOptions(
         monochrome = true,
         features = "classpath:features",
-        glue = {"com/prudential/tap/tapsteps"},
+        glue = {"com/automation/tap/tapsteps"},
         tags = {"@Login","~@ignore"},
         plugin = {"pretty",
                 "html:reports/cucumber/cucumber-html",

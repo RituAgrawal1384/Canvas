@@ -352,11 +352,11 @@ public class UiBasePage {
         String os = configvariable.expandValue(platform);
         logger.info("Launching mobile application for : " + os);
         if (os.equalsIgnoreCase("android")) {
-            tapDriver.androidDriver("", Configvariable.envPropertyMap.get("pulse.android.app.package"), Configvariable.envPropertyMap.get("pulse.android.app.activity"));
+            tapDriver.androidDriver("", Configvariable.envPropertyMap.get("android.app.package"), Configvariable.envPropertyMap.get("android.app.activity"));
             logger.info("Android driver created");
 
         } else if (os.equalsIgnoreCase("iOS")) {
-            tapDriver.iOSDriver("", Configvariable.envPropertyMap.get("pulse.ios.app.bundle.id"), Configvariable.envPropertyMap.get("pulse.ios.app.udid"), Configvariable.envPropertyMap.get("pulse.ios.app.platform.version"));
+            tapDriver.iOSDriver("", Configvariable.envPropertyMap.get("ios.app.bundle.id"), Configvariable.envPropertyMap.get("ios.app.udid"), Configvariable.envPropertyMap.get("ios.app.platform.version"));
             logger.info("iOS driver created");
         }
         driver = tapDriver.getWebDriver();

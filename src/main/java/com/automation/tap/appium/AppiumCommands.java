@@ -293,65 +293,6 @@ public class AppiumCommands {
         LOGGER.warn("Current context" + ((AppiumDriver) driver).getContext());
     }
 
-    /**
-     * method to long press on specific element by passing locator
-     *
-     * @param locator element to be long pressed
-     */
-//    public void longPress(By locator) {
-//        try {
-//            WebElement element = driver.findElement(locator);
-//            TouchAction touch = new TouchAction((MobileDriver) driver);
-//            LongPressOptions longPressOptions = new LongPressOptions();
-//            longPressOptions.withElement(ElementOption.element(element));
-//            touch.longPress(longPressOptions).release().perform();
-//            LOGGER.info("Long press successful on element: " + element);
-//        } catch (Exception e) {
-//            LOGGER.error("Element not found " + locator);
-//            throw new PulseException(PulseExceptionType.EXPECTED_WEBELEMENT_DOESNOT_EXIST, "Not able to find element on screen [{}]", locator.toString());
-//        }
-//    }
-
-    /**
-     * method to long press on specific x,y coordinates
-     *
-     * @param x x offset
-     * @param y y offset
-     */
-//    public void longPress(int x, int y) {
-//        TouchAction touch = new TouchAction((MobileDriver) driver);
-//        PointOption pointOption = new PointOption();
-//        pointOption.withCoordinates(x, y);
-//        touch.longPress(pointOption).release().perform();
-//        LOGGER.info("Long press successful on coordinates: " + "( " + x + "," + y + " )");
-//    }
-
-    /**
-     * method to long press on element with absolute coordinates.
-     *
-     * @param locator element to be long pressed
-     * @param x       x offset
-     * @param y       y offset
-     */
-//    public void longPress(By locator, int x, int y) {
-//        try {
-//            WebElement element = driver.findElement(locator);
-//            TouchAction touch = new TouchAction((MobileDriver) driver);
-//            LongPressOptions longPressOptions = new LongPressOptions();
-//            longPressOptions.withPosition(new PointOption().withCoordinates(x, y)).withElement(ElementOption.element(element));
-//            touch.longPress(longPressOptions).release().perform();
-//            LOGGER.info("Long press successful on element: " + element + "on coordinates" + "( " + x + "," + y + " )");
-//        } catch (NoSuchElementException e) {
-//            LOGGER.error("Element not found " + locator);
-//            throw new PulseException(PulseExceptionType.EXPECTED_WEBELEMENT_DOESNOT_EXIST, "Not able to find element on screen [{}]", locator.toString());
-//        }
-//
-//    }
-
-
-//    public static String uiScrollable(String uiSelector) {
-//        return "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(" + uiSelector + ".instance(0));";
-//    }
 
     /**
      * method to open notifications on Android
@@ -1036,7 +977,7 @@ public class AppiumCommands {
     }
 
     public void copyFileFromDeviceToLocal(String folder, String fileName) {
-        String cdCommand = "cd data/data/" + Configvariable.envPropertyMap.get("pulse.android.app.package") + "/" + folder + "/";
+        String cdCommand = "cd data/data/" + Configvariable.envPropertyMap.get("android.app.package") + "/" + folder + "/";
         String copyCommand = "cp " + fileName + " /sdcard";
         String adbPullCommand = "adb pull /sdcard/" + fileName + " /" + System.getProperty("user.dir");
 
