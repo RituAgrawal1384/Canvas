@@ -169,7 +169,7 @@ public class TapDriver {
             capabilities.setCapability("udid", System.getProperty("device.udid"));
         }
         driver = new AndroidDriver(new URL(APPIUM_SERVER_URL), capabilities);
-        ((AndroidDriver) driver).resetApp();
+//        ((AndroidDriver) driver).resetApp();
         driver.manage().timeouts().implicitlyWait(DEFAULT_IMPLICIT_WAIT, TimeUnit.SECONDS);
 
     }
@@ -188,7 +188,7 @@ public class TapDriver {
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("bundleId", iosBundleId);
         capabilities.setCapability("automationName", "XCUITest");
-        capabilities.setCapability("noReset", false);
+        capabilities.setCapability("noReset", NO_RESET);
         capabilities.setCapability("language", APP_LANGUAGE);
         capabilities.setCapability("locale", APP_COUNTRY);
         if (System.getenv("DEVICEFARM_LOG_DIR") == null && System.getProperty("device.udid") == null) {
@@ -202,7 +202,7 @@ public class TapDriver {
             capabilities.setCapability("platformVersion", System.getProperty("device.version"));
         }
         driver = new IOSDriver(new URL(APPIUM_SERVER_URL), capabilities);
-        ((IOSDriver) driver).resetApp();
+//        ((IOSDriver) driver).resetApp();
         driver.manage().timeouts().implicitlyWait(DEFAULT_IMPLICIT_WAIT, TimeUnit.SECONDS);
     }
 
