@@ -34,7 +34,7 @@
 
     <scm>
         <connection>scm:git:git://github.com/RituAgrawal1384/TestAutomationTools.git</connection>
-        <developerConnection>scm:git@github.com:RituAgrawal1384/TestAutomationTools.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:RituAgrawal1384/TestAutomationTools.git</developerConnection>
         <url>https://github.com/RituAgrawal1384/TestAutomationTools</url>
         <tag>HEAD</tag>
     </scm>
@@ -631,12 +631,6 @@
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <version>${json.path.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>${apache.poi.version}</version>
         </dependency>
 
         <dependency>
