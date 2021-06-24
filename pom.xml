@@ -8,6 +8,9 @@
     <packaging>jar</packaging>
     <name>TestAutomationTools</name>
 
+    <description>This library will ease the test automation process using cucumber. And the testers no need to write complex code for data handling and other utilities</description>
+    <url>https://github.com/RituAgrawal1384/TestAutomationTools</url>
+
     <organization>
         <url>https://github.com/RituAgrawal1384/TestAutomationTools</url>
         <name>TestAutomationTools</name>
