@@ -1,0 +1,14 @@
+/target/
+/.txt
+.DS_Store
+/reports/cucumber/
+/reports/
+src/test/resources/reports/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+*.log
+/test-output/
