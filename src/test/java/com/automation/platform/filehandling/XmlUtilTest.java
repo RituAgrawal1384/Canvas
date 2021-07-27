@@ -11,7 +11,7 @@ public class XmlUtilTest {
 
     @Test
     public void testGetDocument() {
-        String fileName = "target/test-classes/testFile/SharedPrefs.xml";
+        String fileName = "target/test-classes/testFile/Test.xml";
         Document doc = xmlFileUtil.getDocument(fileName);
         Assert.assertNotNull(doc, "Document instance is not created");
     }
@@ -19,7 +19,7 @@ public class XmlUtilTest {
     @Test
     public void testExtractValueByTagName() {
         String tagName = "string";
-        String filePath = "target/test-classes/testFile/SharedPrefs.xml";
+        String filePath = "target/test-classes/testFile/Test.xml";
         Map<String, String> dataMap = xmlFileUtil.extractValueByTagName(tagName, filePath);
         Assert.assertNotNull(dataMap.size(), "file is empty");
     }
@@ -27,7 +27,7 @@ public class XmlUtilTest {
     @Test
     public void testExtractValueOfNodeByTagName() {
         String tagName = "version";
-        String filePath = "target/test-classes/testFile/SharedPrefs.xml";
+        String filePath = "target/test-classes/testFile/Test.xml";
         Map<String, String> dataMap = xmlFileUtil.extractValueOfNodeByTagName(tagName, filePath);
         Assert.assertNotNull(dataMap.size(), "file is empty");
     }
@@ -35,7 +35,7 @@ public class XmlUtilTest {
     @Test
     public void testExtractAttributeTextByAttributeValue(){
         String attributeValue = "persist:sharedData";
-        String filePath = "target/test-classes/testFile/SharedPrefs.xml";
+        String filePath = "target/test-classes/testFile/Test.xml";
         Map<String, String> dataMap = xmlFileUtil.extractNodeTextByAttributeValue(attributeValue, filePath);
         Assert.assertNotNull(dataMap.size(), "file is empty");
     }

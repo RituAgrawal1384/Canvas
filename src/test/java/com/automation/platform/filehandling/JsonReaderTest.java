@@ -14,7 +14,7 @@ public class JsonReaderTest {
 
     @Test
     public void testGetJsonString() {
-        String loginText = jsonReader.getJsonString("/testFile/Sales.json");
+        String loginText = jsonReader.getJsonString("/testFile/Login.json");
         assertFalse(loginText.isEmpty());
     }
 

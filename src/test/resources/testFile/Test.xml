@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="persist:profile">Test1</string>
+    <string name="persist:account">Test2</string>
+    <string name="persist:auth">Test3</string>
+    <string name="persist:sharedData">Test4</string>
+    <version>test</version>
+</map>
