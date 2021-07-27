@@ -4,7 +4,7 @@
 
     <groupId>io.github.rituagrawal1384</groupId>
     <artifactId>test-automation-canvas</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Canvas</name>
 
@@ -39,7 +39,7 @@
         <connection>scm:git:git://github.com/RituAgrawal1384/Canvas.git</connection>
         <developerConnection>scm:git:git@github.com:RituAgrawal1384/Canvas.git</developerConnection>
         <url>https://github.com/RituAgrawal1384/Canvas</url>
-        <tag>test-automation-canvas-1.0.3</tag>
+        <tag>test-automation-canvas-1.0.0</tag>
     </scm>
 
     <distributionManagement>
