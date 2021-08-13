@@ -611,4 +611,4 @@ CANVAS provides user an option to add the required capability for the driver bef
 
  # Upcoming features
   1. Web service Automation support
-  2. Docker setup and run scripts using Web Driver in docker container
+  2. Docker setup and run scripts using Web Driver in docker container with examples
